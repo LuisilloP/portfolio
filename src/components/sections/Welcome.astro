@@ -1,0 +1,54 @@
+---
+import SocialMediaBtns from "../buttons/SocialMediaBtns.astro";
+---
+
+<section
+  id="welcome"
+  class="lg:w-[1200px] px-5 m-auto pt-40  flex flex-col-reverse gap-10 sm:flex-row"
+>
+  <div>
+    <div>
+      <h1 class="text-2xl text-stone-800 sm:text-5xl font-semibold">
+        Luis Patricio Araya
+      </h1>
+      <p class="pt-4">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo,
+        culpa. Id nam consequatur nisi ullam mollitia, sit nesciunt eius nulla
+        commodi optio impedit magnam voluptatem iure fuga molestias consequuntur
+        sint. culpa. Id nam consequatur nisi ullam mollitia, sit nesciunt eius
+        nulla commodi optio impedit magnam voluptatem iure fuga molestias
+        consequuntur.
+      </p>
+    </div>
+    <div class="pt-8">
+      <ul>
+        <li class="flex gap-2 items-center">
+          <img
+            class="invert-25"
+            src="/svg/location.svg"
+            alt="Logo de ubicación "
+            width={30}
+            height={30}
+          />
+          <p>IV ,Chile.</p>
+        </li>
+        <li class="flex gap-2 items-center">
+          <span class="w-[30px] text-center text-green-400">●</span>
+          <p>Disponible, en busqueda laboral.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="pt-8">
+      <SocialMediaBtns />
+    </div>
+  </div>
+  <div>
+    <div class="bg-gray-500 w-auto lg:w-[400px] lg:h-[500px]">
+      <img
+        src="me.jpg"
+        class="bottom-5 w-[90%] m-auto lg:w-[400px] lg:h-[500px] relative sm:bottom-8 sm:right-8 border-4 sm:border-8 border-white"
+        alt="Fotografia Luis Araya"
+      />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+---
+import Tecnologies from "../card/Tecnologies.astro";
+import WorkCard from "../card/WorkCard.astro";
+---
+
+<section class="lg:w-[1200px] m-auto px-5 flex flex-col md:flex-row">
+  <div class="md:w-[60%]">
+    <h3 class="text-2xl font-medium">Experiencia</h3>
+    <div class="pt-6 flex flex-col">
+      <WorkCard
+        workName="Desarrollador / Informatico"
+        companyName="Free Lance"
+        location="Ovalle IV,Chile"
+        initialDate="Diciembre 2022"
+        finishDate="Actualidad"
+        text="Desarrollo de sitios web y orientación a comercios emergentes y establecidos (centros odontológicos, almacenes, cafeterías, etc..)."
+        tecnologies="astro, react, tailwind"
+      />
+      <WorkCard
+        workName="Desarrollador / Informatico"
+        companyName="Free Lance"
+        location="Ovalle IV,Chile"
+        initialDate="Diciembre 2022"
+        finishDate="Actualidad"
+        text="Desarrollo de sitios web y orientación a comercios emergentes y establecidos (centros odontológicos, almacenes, cafeterías, etc..)."
+        tecnologies="astro, react, tailwind"
+      />
+    </div>
+  </div>
+  <div class="md:w-[40%]">
+    <h3 class="text-2xl font-medium">Tecnologias</h3>
+
+    <div>
+      <div>
+        <h4 class="text-xl font-medium pt-6">Lenguajes de programación</h4>
+        <div class="pt-2 grid grid-cols-4">
+          <Tecnologies
+            name="Typescript"
+            url="/svg/tecnologies/typescript.svg"
+          />
+          <Tecnologies name="Python" url="/svg/tecnologies/python.svg" />
+          <Tecnologies name="SQL" url="/svg/tecnologies/sql.svg" />
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xl font-medium pt-6">Front-end</h4>
+        <div class="pt-2 grid grid-cols-4">
+          <Tecnologies name="Astro" url="/svg/tecnologies/astro.svg" />
+          <Tecnologies name="React" url="/svg/tecnologies/react.svg" />
+          <Tecnologies name="NextJs" url="/svg/tecnologies/next.svg" />
+          <Tecnologies name="Tailwind" url="/svg/tecnologies/tailwind.svg" />
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xl font-medium pt-6">Herramientas</h4>
+        <div class="pt-2 grid grid-cols-4">
+          <Tecnologies name="Figma" url="/svg/tecnologies/typescript.svg" />
+          <Tecnologies name="Git" url="/svg/tecnologies/typescript.svg" />
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xl font-medium pt-6">Análisis de datos</h4>
+        <div class="pt-2 grid grid-cols-4">
+          <Tecnologies
+            name="Typescript"
+            url="/svg/tecnologies/typescript.svg"
+          />
+          <Tecnologies
+            name="Typescript"
+            url="/svg/tecnologies/typescript.svg"
+          />
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xl font-medium pt-6">Bases de datos</h4>
+        <div class="pt-2 grid grid-cols-4">
+          <Tecnologies
+            name="Typescript"
+            url="/svg/tecnologies/typescript.svg"
+          />
+          <Tecnologies
+            name="Typescript"
+            url="/svg/tecnologies/typescript.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

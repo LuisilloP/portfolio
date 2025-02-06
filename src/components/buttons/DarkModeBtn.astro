@@ -1,0 +1,35 @@
+---
+
+---
+
+<button
+  ><img
+    id="theme-toggle"
+    class=" btn_darkmode cursor-pointer"
+    src={"/svg/theme.svg"}
+    width={30}
+    height={30}
+    alt="darkmode btn"
+  /></button
+>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("theme-toggle");
+    if (button != null) {
+      function toggleTheme() {
+        const isDark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      }
+
+      // Verifica el tema guardado en localStorage y ajusta el botón
+      const currentTheme = localStorage.getItem("theme");
+      if (currentTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      button.addEventListener("click", toggleTheme);
+    }
+  });
+</script>

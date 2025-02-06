@@ -1,0 +1,25 @@
+---
+const {
+  workName,
+  companyName,
+  location,
+  initialDate,
+  finishDate,
+  text,
+  tecnologies,
+} = Astro.props;
+---
+
+<div>
+  <h3 class="text-2xl font-bold">{workName}</h3>
+  <div class="flex gap-2 font-bold text-teal-700">
+    <h4>{companyName} -</h4>
+    <h4>{location}.</h4>
+  </div>
+  <div class="flex gap-2 text-xs">
+    <p>{initialDate} -</p>
+    <p>{finishDate}.</p>
+  </div>
+  <p>{text}</p>
+  <p>Tecnologias utilizadas: {tecnologies}</p>
+</div>

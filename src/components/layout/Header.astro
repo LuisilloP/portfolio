@@ -1,0 +1,103 @@
+---
+import DarkModeBtn from "../buttons/DarkModeBtn.astro";
+
+const url = [
+  ["sobre-mi", "Sobre mi"],
+  ["trabajos", "Experiencia laboral"],
+  ["proyects", "Proyectos"],
+  //   ["reseñas", "reseñas"],
+  ["contacto", "Contacto"],
+];
+---
+
+<nav
+  id="navBar"
+  class={` bg-white right-0 px-4 ease-out duration-500 flex flex-col md:flex-row justify-between fixed z-30 top-0 start-0 border-b border-gray-600 pt-4 text-stone-600 font-barlow pb-2 `}
+>
+  <div class="flex
+  justify-between
+  w-[100%]
+  md:w-auto
+  items-center">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="/logo.png" class="h-10 lg:h-10" alt="Logo Luis" />
+    </a>
+    <a
+      id="menu-button"
+      data-collapse-toggle="navbar-sticky"
+      data-nav-toggle="#navbar-sticky"
+      class="ease-out duration-500 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      role="button"
+      aria-controls="navbar-sticky"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"></path>
+      </svg>
+    </a>
+  </div>
+  <div
+    id="menu-open"
+    class="ease-out duration-500 hidden items-center justify-between w-full md:flex md:w-auto md:order-1 navbar gap-5"
+    id="navbar-sticky"
+  >
+    <ul
+      class="flex flex-col gap-2 lg:p-4 md:p-0 mt-8 lg:mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 list-none"
+    >
+      {
+        url.map((nav) => (
+          <li>
+            <a
+              data-info={nav[0]}
+              class="nav-button-h duration-special ease-out hover:ease-in lg:px-0 transition cursor-pointer no-underline text-inherit "
+              href={`#${nav[1]}`}
+            >
+              {nav[1]}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <ul
+      class="flex gap-4 md:gap-0 lg:p-4 md:p-0 mt-8 lg:mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 list-none"
+    >
+      <li>
+        <DarkModeBtn />
+      </li>
+      <li>
+        <a>Curriculum</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // Obtener referencias a los elementos del DOM
+
+    const button = document.querySelector("#menu-button");
+    const menuOpen = document.querySelector("#menu-open");
+    const navBtn = document.querySelectorAll(".nav-button-h");
+    const navBar = document.getElementById("navBar");
+
+    // Función para manejar el click del botón del menú
+    if (button && menuOpen) {
+      button.addEventListener("click", () => {
+        // navBar?.classList.add("bg-[#111111F2]");
+        menuOpen.classList.toggle("hidden");
+      });
+    }
+
+    // Función para manejar el click en botones de navegación
+  </script>
+</nav>
