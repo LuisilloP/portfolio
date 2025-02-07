@@ -5,45 +5,64 @@ import WorkCard from "../card/WorkCard.astro";
 
 <section class="lg:w-[1200px] m-auto px-5 flex flex-col md:flex-row">
   <div class="md:w-[60%]">
-    <h3 class="text-2xl font-medium">Experiencia</h3>
-    <div class="pt-6 flex flex-col">
+    <h3 class="text-2xl italic font-medium">Experiencia</h3>
+    <div class="pt-6 flex flex-col gap-5">
       <WorkCard
         workName="Desarrollador / Informatico"
         companyName="Free Lance"
-        location="Ovalle IV,Chile"
+        location="Ovalle IV, Chile"
         initialDate="Diciembre 2022"
         finishDate="Actualidad"
         text="Desarrollo de sitios web y orientación a comercios emergentes y establecidos (centros odontológicos, almacenes, cafeterías, etc..)."
-        tecnologies="astro, react, tailwind"
+        tecnologies="Astro, React, Tailwind, NextJs, Figma, Git."
       />
       <WorkCard
-        workName="Desarrollador / Informatico"
-        companyName="Free Lance"
-        location="Ovalle IV,Chile"
-        initialDate="Diciembre 2022"
-        finishDate="Actualidad"
-        text="Desarrollo de sitios web y orientación a comercios emergentes y establecidos (centros odontológicos, almacenes, cafeterías, etc..)."
-        tecnologies="astro, react, tailwind"
+        workName="Profesor en taller de estructura de datos"
+        companyName="IP Santo Tomas"
+        location="La Serena IV, Chile"
+        initialDate="Mayo 2024"
+        finishDate="Mayo 2024"
+        text="Implementación y estructura de dos clases,de al menos 20 estudiantes de primer año de ingeniería informática realizada para dos secciones."
+        tecnologies="Python."
+      />
+      <WorkCard
+        workName="Desarrollador web"
+        companyName="CoderHouse"
+        location="Santiago, Chile"
+        initialDate="Octubre 2022"
+        finishDate="Noviembre 2022"
+        text="Desarrollo de un sitio web en equipo con programadores, diseñadores y gente de marketing de diferentes partes de Latinoamérica."
+        tecnologies="React, Typescript, Tailwind, Git, Figma."
+      />
+      <WorkCard
+        workName="Analista Programador"
+        companyName="Recibet"
+        location="OValle IV ,Chile"
+        initialDate="Agosto 2020"
+        finishDate="Septiembre 2020"
+        text="Practica laboral realizada para la titulación como analista programador. El proyecto fue estructurado desde cero para la gestión de productos dentro de su emprendimiento, en el cual se implementarían funciones para agregar, eliminar modificar y mostrar estos mismos productos."
+        tecnologies="C#, MYSQL, MVC."
       />
     </div>
   </div>
   <div class="md:w-[40%]">
-    <h3 class="text-2xl font-medium">Tecnologias</h3>
+    <h3 class="text-2xl italic font-medium">Tecnologias</h3>
 
-    <div>
-      <div>
-        <h4 class="text-xl font-medium pt-6">Lenguajes de programación</h4>
+    <div class="pt-6 flex flex-col gap-5">
+      <div class="">
+        <h4 class="text-xl font-medium">Lenguajes de programación</h4>
         <div class="pt-2 grid grid-cols-4">
           <Tecnologies
             name="Typescript"
             url="/svg/tecnologies/typescript.svg"
           />
+          <Tecnologies name="Javascript" url="/svg/tecnologies/js.svg" />
           <Tecnologies name="Python" url="/svg/tecnologies/python.svg" />
           <Tecnologies name="SQL" url="/svg/tecnologies/sql.svg" />
         </div>
       </div>
       <div>
-        <h4 class="text-xl font-medium pt-6">Front-end</h4>
+        <h4 class="text-xl font-medium">Front-end</h4>
         <div class="pt-2 grid grid-cols-4">
           <Tecnologies name="Astro" url="/svg/tecnologies/astro.svg" />
           <Tecnologies name="React" url="/svg/tecnologies/react.svg" />
@@ -52,36 +71,24 @@ import WorkCard from "../card/WorkCard.astro";
         </div>
       </div>
       <div>
-        <h4 class="text-xl font-medium pt-6">Herramientas</h4>
+        <h4 class="text-xl font-medium">Herramientas</h4>
         <div class="pt-2 grid grid-cols-4">
-          <Tecnologies name="Figma" url="/svg/tecnologies/typescript.svg" />
-          <Tecnologies name="Git" url="/svg/tecnologies/typescript.svg" />
+          <Tecnologies name="Figma" url="/svg/tecnologies/figma.svg" />
+          <Tecnologies name="Git" url="/svg/tecnologies/git.svg" />
         </div>
       </div>
       <div>
-        <h4 class="text-xl font-medium pt-6">Análisis de datos</h4>
+        <h4 class="text-xl font-medium">Análisis de datos</h4>
         <div class="pt-2 grid grid-cols-4">
-          <Tecnologies
-            name="Typescript"
-            url="/svg/tecnologies/typescript.svg"
-          />
-          <Tecnologies
-            name="Typescript"
-            url="/svg/tecnologies/typescript.svg"
-          />
+          <Tecnologies name="Orange" url="/svg/tecnologies/orange.png" />
+          <Tecnologies name="Pandas" url="/svg/tecnologies/pandas.svg" />
         </div>
       </div>
       <div>
-        <h4 class="text-xl font-medium pt-6">Bases de datos</h4>
+        <h4 class="text-xl font-medium">Bases de datos</h4>
         <div class="pt-2 grid grid-cols-4">
-          <Tecnologies
-            name="Typescript"
-            url="/svg/tecnologies/typescript.svg"
-          />
-          <Tecnologies
-            name="Typescript"
-            url="/svg/tecnologies/typescript.svg"
-          />
+          <Tecnologies name="MYSQL" url="/svg/tecnologies/mysql.svg" />
+          <Tecnologies name="MongoDB" url="/svg/tecnologies/mongo.svg" />
         </div>
       </div>
     </div>

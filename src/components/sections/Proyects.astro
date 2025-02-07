@@ -1,0 +1,65 @@
+---
+import Proyect from "../card/Proyect.astro";
+---
+
+<section class="lg:w-[1200px] px-5 m-auto pt-40">
+  <div>
+    <h3>Proyectos</h3>
+    <div class="flex flex-col gap-10">
+      <Proyect
+        name="El Fiorentino"
+        image="/webPhotos/fiorentino.webp"
+        text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus, quae! Similique ducimus, dolores obcaecati ut possimus repellat, totam dolorum sapiente velit assumenda in nesciunt, tempore fugit voluptates rerum minima quam."
+        tecnologies={["Astro", "Typescript", "Tailwind", "Git", "Figma"]}
+        url="https:www.google.com"
+        img_position="default"
+      />
+      <Proyect
+        name="Asoinco"
+        image="/webPhotos/asoinco.webp"
+        text="Este proyecto fue proporcionado por Santo Tomas como evaluación de la asignatura “Gestión de Proyectos y equipos de trabajo “. Fue una solución informática en equipo para un problema de gestión de asistencia de una feria de exposición de empresas, en la cual se decidió el desarrollo de un sitio web con información y un formulario correspondiente para la asistencia de este mismo y la creación de un código QR para la validación de la asistencia."
+        tecnologies={[
+          "React",
+          "Next",
+          "Typescript",
+          "Tailwind",
+          "Git",
+          "Figma",
+        ]}
+        url="https://asoinco-proyect-preinscripcion.vercel.app/"
+        img_position="reverse"
+      />
+      <Proyect
+        name="Clinica Dental Mirador Ovalle"
+        image="/webPhotos/dental.webp"
+        text="Proyecto de posicionamiento web, que consistió en el desarrollo de un perfil de negocios en Google business y un sitio web como carta de presentación para una PYME enfocada en Atención odontológica."
+        tecnologies={[
+          "React",
+          "Next",
+          "Typescript",
+          "Tailwind",
+          "Git",
+          "Figma",
+        ]}
+        url="https://dentist-ale.vercel.app/"
+        img_position="default"
+      />
+      <Proyect
+        name="Frutillita Creaciones"
+        image="/webPhotos/frutillas.webp"
+        text="Sitio web desarrollado para facilitar la muestra de un catalogo para la venta de frutillas con chocolates para una PYME emergente."
+        tecnologies={["Astro", "Typescript", "Tailwind", "Git", "Figma"]}
+        url="https://frutillitas.vercel.app/"
+        img_position="reverse"
+      />
+      <Proyect
+        name="Skill Shot"
+        image="/webPhotos/skillShot.webp"
+        text="Esta pagina fue desarrollada gracias a un proyecto de Coderhouse, esta experiencia consto de un equipo de 5 integrantes que se conformaban de 2 programadores, 2 diseñadores y una persona de marketing encargada de ceo."
+        tecnologies={["React", "Vite", "Typescript", "SaSS", "Git", "Figma"]}
+        url="https://skillshot.netlify.app/"
+        img_position="default"
+      />
+    </div>
+  </div>
+</section>

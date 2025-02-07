@@ -1,0 +1,45 @@
+---
+import type { ProyectInterface } from "../../Interfaces/Interfaces";
+
+const { name, image, text, tecnologies, url, img_position } =
+  Astro.props as ProyectInterface;
+---
+
+<div
+  class="grid grid-cols-1 md:grid-cols-2 rounded-2xl shadow md:min-h-[400px]"
+>
+  <div
+    class="bg-[#efefef] flex min-h-[300px] md:min-h[600px]"
+    class:list={{
+      "md:rounded-r-2xl ": img_position === "reverse",
+      "md:rounded-l-2xl ": img_position === "default",
+    }}
+  >
+    <img
+      class="w-[90%] h-[90%] md:w-[90%] md:h-[80%] m-auto rounded cursor-pointer hover:scale-105 ease-in-out duration-300"
+      src={image}
+      alt=`Imagen pagina web ${name}`
+    />
+  </div>
+  <div
+    class:list={{
+      "md:order-first ": img_position === "reverse",
+    }}
+    class="flex flex-col justify-center p-2 md:p-0 md:px-[10%] gap-5"
+  >
+    <h3 class="font-bold text-stone-800 text-[18px]">{name}</h3>
+    <p>{text}</p>
+    <div class="flex gap-2 flex-wrap">
+      {
+        tecnologies.map((tecno) => (
+          <p class=" bg-stone-200  px-4 py-0.5 rounded-xl text-stone-600 font-medium">
+            {tecno}
+          </p>
+        ))
+      }
+    </div>
+    <a href={url} target="_blank">
+      <img src="/svg/goWeb.svg" class="w-[30px] h-[30px]" />
+    </a>
+  </div>
+</div>
