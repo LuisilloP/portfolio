@@ -4,25 +4,27 @@
 
 @import "tailwindcss/utilities";
 
-
 @import "tailwindcss";
 @theme {
-  --font-barlow: "Barlow", sans-serif; 
+  --font-barlow: "Barlow", sans-serif;
 }
-html.dark{
+html.dark {
   background-color: hsl(0, 0%, 15%);
-  
-  .btn_darkmode {
-  filter: invert(100%);
-}
-#welcome
-{
- color: #ffffff!important;
-} 
-#navBar
-{
-  background-color: hsl(0, 0%, 15%);
-  color: #ffffff!important;
-}
-}
 
+  .btn_darkmode {
+    filter: invert(100%);
+  }
+  #welcome,
+  #experience,
+  #proyects,
+  #contact {
+    color: #ffffff !important;
+  }
+  h1 {
+    color: #ffffff !important;
+  }
+  #navBar {
+    background-color: hsl(0, 0%, 15%);
+    color: #ffffff !important;
+  }
+}

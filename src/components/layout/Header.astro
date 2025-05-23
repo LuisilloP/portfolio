@@ -2,11 +2,11 @@
 import DarkModeBtn from "../buttons/DarkModeBtn.astro";
 
 const url = [
-  ["sobre-mi", "Sobre mi"],
-  ["trabajos", "Experiencia laboral"],
+  ["welcome", "Sobre"],
+  ["experience", "Experiencia"],
   ["proyects", "Proyectos"],
   //   ["reseñas", "reseñas"],
-  ["contacto", "Contacto"],
+  ["contact", "Contacto"],
 ];
 ---
 
@@ -64,7 +64,7 @@ const url = [
               class="nav-button-h duration-special ease-out hover:ease-in lg:px-0 transition cursor-pointer no-underline text-inherit "
               href={`#${nav[1]}`}
             >
-              {nav[1]}
+              {nav[1] == "Sobre" ? nav[1] + " mí" : nav[1]}
             </a>
           </li>
         ))
@@ -75,9 +75,6 @@ const url = [
     >
       <li>
         <DarkModeBtn />
-      </li>
-      <li>
-        <a>Curriculum</a>
       </li>
     </ul>
   </div>
