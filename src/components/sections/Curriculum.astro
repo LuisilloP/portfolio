@@ -9,8 +9,7 @@ const experiences = [
     location: "Ovalle, Chile",
     initialDate: "Dic 2022",
     finishDate: "Actualidad",
-    text:
-      "Desarrollo de sitios web y asesoría a comercios emergentes y establecidos (centros odontológicos, almacenes, cafeterías). Implemento analítica, SEO técnico y entrego documentación para que los equipos puedan operar y escalar.",
+    text: "Desarrollo de sitios web y asesoría a comercios emergentes y establecidos (centros odontológicos, almacenes, cafeterías). Implemento analítica, SEO técnico y entrego documentación para que los equipos puedan operar y escalar.",
     tecnologies: ["Astro", "React", "Next.js", "Tailwind", "Figma", "Git"],
   },
   {
@@ -19,8 +18,7 @@ const experiences = [
     location: "La Serena, Chile",
     initialDate: "Mayo 2024",
     finishDate: "Mayo 2024",
-    text:
-      "Planifiqué e impartí sesiones para más de 20 estudiantes de primer año. Clases prácticas con Python y visualización para reforzar conceptos de listas, colas y árboles.",
+    text: "Planifiqué e impartí sesiones para más de 20 estudiantes de primer año. Clases prácticas con Python y visualización para reforzar conceptos de listas, colas y árboles.",
     tecnologies: ["Python"],
   },
   {
@@ -29,8 +27,7 @@ const experiences = [
     location: "Remoto · LATAM",
     initialDate: "Oct 2022",
     finishDate: "Nov 2022",
-    text:
-      "Proyecto colaborativo con diseño, marketing y desarrollo para lanzar un sitio de e-learning. Coordiné integración de componentes y estándares de accesibilidad.",
+    text: "Proyecto colaborativo con diseño, marketing y desarrollo para lanzar un sitio de e-learning. Coordiné integración de componentes y estándares de accesibilidad.",
     tecnologies: ["React", "TypeScript", "Tailwind", "Figma", "Git"],
   },
   {
@@ -39,8 +36,7 @@ const experiences = [
     location: "Ovalle, Chile",
     initialDate: "Ago 2020",
     finishDate: "Sep 2020",
-    text:
-      "Construcción desde cero de un gestor de productos (crear, leer, actualizar y eliminar) para su operación diaria. Diseño de base de datos y flujo MVC.",
+    text: "Construcción desde cero de un gestor de productos (crear, leer, actualizar y eliminar) para su operación diaria. Diseño de base de datos y flujo MVC.",
     tecnologies: ["C#", "MySQL", "MVC"],
   },
 ];
@@ -90,50 +86,48 @@ const stacks = [
 
 <section id="experience" class="section-shell space-y-8 py-16 lg:py-20">
   <div class="space-y-2">
-    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-teal-400">Experiencia y stack</p>
-    <h3 class="text-3xl font-semibold text-[var(--text-primary)]">Aprendizajes aplicados en proyectos reales</h3>
-    <p class="max-w-3xl text-[var(--text-secondary)]">
-      Acompaño a equipos para lanzar rápido, medir y mejorar. Combino desarrollo front-end, flujos automatizados y
-      capacitación técnica para que los proyectos sobrevivan más allá del “release”.
+    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-teal-400">
+      Experiencia y stack
     </p>
+    <h3 class="text-3xl font-semibold text-[var(--text-primary)]">
+      Experiencia en proyectos
+    </h3>
   </div>
 
   <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr]">
     <div class="space-y-4">
-      {experiences.map((exp) => (
-        <WorkCard {...exp} />
-      ))}
+      {experiences.map((exp) => <WorkCard {...exp} />)}
     </div>
 
     <div class="glass-panel subtle-border space-y-6 p-6 sm:p-7 lg:p-8">
       <div class="flex items-center justify-between">
         <div>
-          <p class="text-sm uppercase tracking-[0.16em] text-teal-400 font-semibold">Herramientas</p>
-          <h4 class="text-xl font-semibold text-[var(--text-primary)]">Stack curado para velocidad</h4>
+          <p
+            class="text-sm uppercase tracking-[0.16em] text-teal-400 font-semibold"
+          >
+            Herramientas
+          </p>
+          <h4 class="text-xl font-semibold text-[var(--text-primary)]">
+            Stack de desarrollo
+          </h4>
         </div>
-        <span class="pill">Calidad · Rendimiento</span>
       </div>
 
       <div class="space-y-6">
-        {stacks.map((stack) => (
-          <div class="space-y-3">
-            <p class="text-sm font-semibold text-[var(--text-secondary)]">{stack.title}</p>
-            <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {stack.items.map((item) => (
-                <Tecnologies name={item.name} url={item.url} />
-              ))}
+        {
+          stacks.map((stack) => (
+            <div class="space-y-3">
+              <p class="text-sm font-semibold text-[var(--text-secondary)]">
+                {stack.title}
+              </p>
+              <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {stack.items.map((item) => (
+                  <Tecnologies name={item.name} url={item.url} />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="space-y-2 rounded-2xl border border-dashed border-[var(--border-color)] bg-white/5 p-4">
-        <p class="text-sm font-semibold text-[var(--text-primary)]">Enfoque de trabajo</p>
-        <ul class="list-none space-y-2 text-sm text-[var(--text-secondary)]">
-          <li>· Diseño de componentes reutilizables y accesibles.</li>
-          <li>· Documentación ligera para equipos no técnicos.</li>
-          <li>· Automatizaciones que ahorran horas en tareas repetitivas.</li>
-        </ul>
+          ))
+        }
       </div>
     </div>
   </div>

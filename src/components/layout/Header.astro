@@ -12,48 +12,70 @@ const links = [
 <header class="sticky top-0 z-30 backdrop-blur-xl">
   <div class="section-shell">
     <nav
-      class="glass-panel subtle-border mt-4 flex w-full flex-col items-start gap-3 px-4 py-3 md:px-6 lg:flex-row lg:items-center lg:justify-between"
+      class="glass-panel subtle-border mt-4 flex w-full flex-col gap-3 px-4 py-3 md:px-6 lg:flex-row lg:items-center"
       id="navBar"
     >
       <div class="flex w-full items-center justify-between gap-3">
         <a href="/" class="flex items-center gap-3">
-          <img src="/logo.png" class="h-10 rounded-xl border border-[var(--border-color)]" alt="Logo Luis" />
+          <!-- <img
+            src="/logo.png"
+            class="h-10 rounded-xl border border-[var(--border-color)]"
+            alt="Logo Luis"
+          /> -->
           <div class="leading-tight">
-            <p class="text-xs uppercase tracking-[0.12em] text-teal-400 font-semibold">Ingeniero informático</p>
-            <p class="text-base font-bold text-[var(--text-primary)]">Luis Araya</p>
+            <p
+              class="text-xs uppercase tracking-[0.12em] text-teal-400 font-semibold"
+            >
+              Ingeniero informático
+            </p>
+            <p class="text-base font-bold text-[var(--text-primary)]">
+              Luis Araya
+            </p>
           </div>
         </a>
 
         <button
-          class="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border-color)] lg:hidden"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border-color)] lg:hidden"
           id="navToggle"
           aria-label="Abrir menú"
           aria-expanded="false"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--text-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-[var(--text-primary)]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M4 7h16M4 12h16M4 17h16"></path>
           </svg>
         </button>
       </div>
 
       <div
         id="navMenu"
-        class="hidden w-full flex-col gap-4 border-t border-[var(--border-color)] pt-4 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:pt-0"
+        class="hidden w-full flex-col gap-4 border-t border-[var(--border-color)] pt-4 lg:ml-auto lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:pt-0"
       >
-        <ul class="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-2">
+        <ul class="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-4">
           {
             links.map((nav) => (
               <li>
-                <a class="nav-link" data-target={nav.id} href={`#${nav.id}`}>
+                <a class="" data-target={nav.id} href={`#${nav.id}`}>
                   {nav.label}
                 </a>
               </li>
             ))
           }
         </ul>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 lg:gap-4">
           <a class="btn-ghost" href="#contact">Hablemos</a>
-          <div class="rounded-xl border border-[var(--border-color)] bg-white/5 p-1">
+          <div
+            class="hidden h-11 w-11 items-center justify-center rounded-full border border-[var(--border-color)] bg-white/5 p-1 lg:flex"
+          >
             <DarkModeBtn />
           </div>
         </div>
@@ -78,7 +100,8 @@ const links = [
         const target = document.getElementById(targetId);
         if (target) {
           const offset = 90;
-          const y = target.getBoundingClientRect().top + window.scrollY - offset;
+          const y =
+            target.getBoundingClientRect().top + window.scrollY - offset;
           window.scrollTo({ top: y, behavior: "smooth" });
         }
         if (window.innerWidth < 1024) navMenu?.classList.add("hidden");
@@ -99,7 +122,9 @@ const links = [
     );
 
     navLinks.forEach((link) => {
-      const section = document.getElementById(link.getAttribute("data-target") || "");
+      const section = document.getElementById(
+        link.getAttribute("data-target") || ""
+      );
       if (section) observer.observe(section);
     });
   </script>

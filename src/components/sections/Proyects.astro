@@ -4,9 +4,16 @@ import Proyect from "../card/Proyect.astro";
 const projects = [
   {
     name: "El Fiorentino",
+    image: "/webPhotos/harald.webp",
+    text: "Sitio web profesional para el Dr. Harald Ziller. Presenta quién es, sus especialidades y servicios, casos y momentos destacados con pacientes, y un flujo simple para agendar o contactar.",
+    tecnologies: ["Next", "TypeScript", "Tailwind", "Git", "Figma"],
+    url: "https://test-drharaldziller-ndghpj.luisilloapi.uk/",
+    img_position: "default",
+  },
+  {
+    name: "El Fiorentino",
     image: "/webPhotos/fiorentino.webp",
-    text:
-      "Landing y carta digital para restaurante. Flujo optimizado para reservas rápidas, menú claro y métricas de conversión para campañas locales.",
+    text: "Landing y carta digital para restaurante. Flujo optimizado para reservas rápidas, menú claro y métricas de conversión para campañas locales.",
     tecnologies: ["Astro", "TypeScript", "Tailwind", "Git", "Figma"],
     url: "https://www.google.com",
     img_position: "default",
@@ -14,8 +21,7 @@ const projects = [
   {
     name: "Asoinco",
     image: "/webPhotos/asoinco.webp",
-    text:
-      "Solución web para gestionar asistencia a feria de empresas: preinscripción, emisión de QR y panel simple para validar entradas durante el evento.",
+    text: "Solución web para gestionar asistencia a feria de empresas: preinscripción, emisión de QR y panel simple para validar entradas durante el evento.",
     tecnologies: ["React", "Next", "TypeScript", "Tailwind", "Git", "Figma"],
     url: "https://asoinco-proyect-preinscripcion.vercel.app/",
     img_position: "reverse",
@@ -23,8 +29,7 @@ const projects = [
   {
     name: "Clínica Dental Mirador Ovalle",
     image: "/webPhotos/dental.webp",
-    text:
-      "Sitio de posicionamiento con foco en agenda de horas y confianza del paciente. Contenido optimizado para SEO local y formularios con entregables claros.",
+    text: "Sitio de posicionamiento con foco en agenda de horas y confianza del paciente. Contenido optimizado para SEO local y formularios con entregables claros.",
     tecnologies: ["React", "Next", "TypeScript", "Tailwind", "Git", "Figma"],
     url: "https://dentist-ale.vercel.app/",
     img_position: "default",
@@ -32,8 +37,7 @@ const projects = [
   {
     name: "Frutillita Creaciones",
     image: "/webPhotos/frutillas.webp",
-    text:
-      "Catálogo visual para una pastelería emergente. Fotografías destacadas, llamadas a WhatsApp y administración sencilla de productos.",
+    text: "Catálogo visual para una pastelería emergente. Fotografías destacadas, llamadas a WhatsApp y administración sencilla de productos.",
     tecnologies: ["Astro", "TypeScript", "Tailwind", "Git", "Figma"],
     url: "https://frutillitas.vercel.app/",
     img_position: "reverse",
@@ -41,8 +45,7 @@ const projects = [
   {
     name: "Skill Shot",
     image: "/webPhotos/skillShot.webp",
-    text:
-      "Landing creada en equipo durante CoderHouse. Coordiné componentes UI, performance en Vite y handoff en Figma con marketing y diseño.",
+    text: "Landing creada en equipo durante CoderHouse. Coordiné componentes UI, performance en Vite y handoff en Figma con marketing y diseño.",
     tecnologies: ["React", "Vite", "TypeScript", "Sass", "Git", "Figma"],
     url: "https://skillshot.netlify.app/",
     img_position: "default",
@@ -52,17 +55,20 @@ const projects = [
 
 <section id="proyects" class="section-shell space-y-8 pt-16 lg:pt-20">
   <div class="space-y-2">
-    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-teal-400">Proyectos</p>
-    <h3 class="text-3xl font-semibold text-[var(--text-primary)]">Experiencias digitales con foco en claridad</h3>
+    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-teal-400">
+      Proyectos
+    </p>
+    <h3 class="text-3xl font-semibold text-[var(--text-primary)]">
+      Experiencias digitales con foco en claridad
+    </h3>
     <p class="max-w-3xl text-[var(--text-secondary)]">
-      De landing pages con alto impacto visual a flujos completos con formularios, analítica y SEO técnico.
-      Cada entrega incluye handoff y guías para que el proyecto siga vivo después de la publicación.
+      De landing pages con alto impacto visual a flujos completos con
+      formularios, analítica y SEO técnico. Cada entrega incluye handoff y guías
+      para que el proyecto siga vivo después de la publicación.
     </p>
   </div>
 
   <div class="flex flex-col gap-10">
-    {projects.map((project) => (
-      <Proyect {...project} />
-    ))}
+    {projects.map((project) => <Proyect {...project} />)}
   </div>
 </section>
