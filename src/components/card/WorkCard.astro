@@ -8,18 +8,34 @@ const {
   text,
   tecnologies,
 } = Astro.props;
+
+const techList = Array.isArray(tecnologies)
+  ? tecnologies
+  : String(tecnologies)
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean);
 ---
 
-<div>
-  <h3 class="text-2xl font-bold">{workName}</h3>
-  <div class="flex gap-2 font-bold text-teal-700">
-    <h4>{companyName} -</h4>
-    <h4>{location}.</h4>
+<div class="glass-panel subtle-border relative overflow-hidden p-6">
+  <div class="absolute inset-0 bg-gradient-to-r from-cyan-400/8 via-transparent to-amber-300/8"></div>
+  <div class="relative flex flex-wrap items-start justify-between gap-3">
+    <div>
+      <p class="text-[11px] uppercase tracking-[0.16em] text-teal-400 font-semibold">
+        {initialDate} – {finishDate}
+      </p>
+      <h3 class="text-xl font-semibold text-[var(--text-primary)]">{workName}</h3>
+      <p class="text-sm font-semibold text-[var(--text-secondary)]">{companyName}</p>
+    </div>
+    <span class="pill">{location}</span>
   </div>
-  <div class="flex gap-2 text-xs">
-    <p>{initialDate} -</p>
-    <p>{finishDate}.</p>
-  </div>
-  <p>{text}</p>
-  <p>Tecnologias utilizadas: {tecnologies}</p>
+  <p class="relative mt-3 text-[var(--text-secondary)]">{text}</p>
+
+  {techList.length ? (
+    <div class="relative mt-4 flex flex-wrap gap-2">
+      {techList.map((tec) => (
+        <span class="tech-badge">{tec}</span>
+      ))}
+    </div>
+  ) : null}
 </div>

@@ -1,98 +1,139 @@
 ---
 import Tecnologies from "../card/Tecnologies.astro";
 import WorkCard from "../card/WorkCard.astro";
+
+const experiences = [
+  {
+    workName: "Desarrollador · Consultor tecnológico",
+    companyName: "Freelance",
+    location: "Ovalle, Chile",
+    initialDate: "Dic 2022",
+    finishDate: "Actualidad",
+    text:
+      "Desarrollo de sitios web y asesoría a comercios emergentes y establecidos (centros odontológicos, almacenes, cafeterías). Implemento analítica, SEO técnico y entrego documentación para que los equipos puedan operar y escalar.",
+    tecnologies: ["Astro", "React", "Next.js", "Tailwind", "Figma", "Git"],
+  },
+  {
+    workName: "Profesor en taller de estructura de datos",
+    companyName: "IP Santo Tomás",
+    location: "La Serena, Chile",
+    initialDate: "Mayo 2024",
+    finishDate: "Mayo 2024",
+    text:
+      "Planifiqué e impartí sesiones para más de 20 estudiantes de primer año. Clases prácticas con Python y visualización para reforzar conceptos de listas, colas y árboles.",
+    tecnologies: ["Python"],
+  },
+  {
+    workName: "Desarrollador web",
+    companyName: "CoderHouse",
+    location: "Remoto · LATAM",
+    initialDate: "Oct 2022",
+    finishDate: "Nov 2022",
+    text:
+      "Proyecto colaborativo con diseño, marketing y desarrollo para lanzar un sitio de e-learning. Coordiné integración de componentes y estándares de accesibilidad.",
+    tecnologies: ["React", "TypeScript", "Tailwind", "Figma", "Git"],
+  },
+  {
+    workName: "Analista Programador",
+    companyName: "Recibet",
+    location: "Ovalle, Chile",
+    initialDate: "Ago 2020",
+    finishDate: "Sep 2020",
+    text:
+      "Construcción desde cero de un gestor de productos (crear, leer, actualizar y eliminar) para su operación diaria. Diseño de base de datos y flujo MVC.",
+    tecnologies: ["C#", "MySQL", "MVC"],
+  },
+];
+
+const stacks = [
+  {
+    title: "Lenguajes",
+    items: [
+      { name: "TypeScript", url: "/svg/tecnologies/typescript.svg" },
+      { name: "JavaScript", url: "/svg/tecnologies/js.svg" },
+      { name: "Python", url: "/svg/tecnologies/python.svg" },
+      { name: "SQL", url: "/svg/tecnologies/sql.svg" },
+    ],
+  },
+  {
+    title: "Front-end",
+    items: [
+      { name: "Astro", url: "/svg/tecnologies/astro.svg" },
+      { name: "React", url: "/svg/tecnologies/react.svg" },
+      { name: "Next.js", url: "/svg/tecnologies/next.svg" },
+      { name: "Tailwind", url: "/svg/tecnologies/tailwind.svg" },
+    ],
+  },
+  {
+    title: "Herramientas",
+    items: [
+      { name: "Figma", url: "/svg/tecnologies/figma.svg" },
+      { name: "Git", url: "/svg/tecnologies/git.svg" },
+    ],
+  },
+  {
+    title: "Análisis de datos",
+    items: [
+      { name: "Orange", url: "/svg/tecnologies/orange.png" },
+      { name: "Pandas", url: "/svg/tecnologies/pandas.svg" },
+    ],
+  },
+  {
+    title: "Bases de datos",
+    items: [
+      { name: "MySQL", url: "/svg/tecnologies/mysql.svg" },
+      { name: "MongoDB", url: "/svg/tecnologies/mongo.svg" },
+    ],
+  },
+];
 ---
 
-<section
-  id="experience"
-  class="lg:w-[1200px] m-auto px-5 flex flex-col md:flex-row"
->
-  <div class="md:w-[60%]">
-    <h3 class="text-2xl italic font-medium">Experiencia</h3>
-    <div class="pt-6 flex flex-col gap-5">
-      <WorkCard
-        workName="Desarrollador / Informatico"
-        companyName="Free Lance"
-        location="Ovalle IV, Chile"
-        initialDate="Diciembre 2022"
-        finishDate="Actualidad"
-        text="Desarrollo de sitios web y orientación a comercios emergentes y establecidos (centros odontológicos, almacenes, cafeterías, etc..)."
-        tecnologies="Astro, React, Tailwind, NextJs, Figma, Git."
-      />
-      <WorkCard
-        workName="Profesor en taller de estructura de datos"
-        companyName="IP Santo Tomas"
-        location="La Serena IV, Chile"
-        initialDate="Mayo 2024"
-        finishDate="Mayo 2024"
-        text="Implementación y estructura de dos clases,de al menos 20 estudiantes de primer año de ingeniería informática realizada para dos secciones."
-        tecnologies="Python."
-      />
-      <WorkCard
-        workName="Desarrollador web"
-        companyName="CoderHouse"
-        location="Santiago, Chile"
-        initialDate="Octubre 2022"
-        finishDate="Noviembre 2022"
-        text="Desarrollo de un sitio web en equipo con programadores, diseñadores y gente de marketing de diferentes partes de Latinoamérica."
-        tecnologies="React, Typescript, Tailwind, Git, Figma."
-      />
-      <WorkCard
-        workName="Analista Programador"
-        companyName="Recibet"
-        location="OValle IV ,Chile"
-        initialDate="Agosto 2020"
-        finishDate="Septiembre 2020"
-        text="Practica laboral realizada para la titulación como analista programador. El proyecto fue estructurado desde cero para la gestión de productos dentro de su emprendimiento, en el cual se implementarían funciones para agregar, eliminar modificar y mostrar estos mismos productos."
-        tecnologies="C#, MYSQL, MVC."
-      />
-    </div>
+<section id="experience" class="section-shell space-y-8 py-16 lg:py-20">
+  <div class="space-y-2">
+    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-teal-400">Experiencia y stack</p>
+    <h3 class="text-3xl font-semibold text-[var(--text-primary)]">Aprendizajes aplicados en proyectos reales</h3>
+    <p class="max-w-3xl text-[var(--text-secondary)]">
+      Acompaño a equipos para lanzar rápido, medir y mejorar. Combino desarrollo front-end, flujos automatizados y
+      capacitación técnica para que los proyectos sobrevivan más allá del “release”.
+    </p>
   </div>
-  <div class="md:w-[40%]">
-    <h3 class="text-2xl italic font-medium">Tecnologias</h3>
 
-    <div class="pt-6 flex flex-col gap-5">
-      <div class="">
-        <h4 class="text-xl font-medium">Lenguajes de programación</h4>
-        <div class="pt-2 grid grid-cols-4">
-          <Tecnologies
-            name="Typescript"
-            url="/svg/tecnologies/typescript.svg"
-          />
-          <Tecnologies name="Javascript" url="/svg/tecnologies/js.svg" />
-          <Tecnologies name="Python" url="/svg/tecnologies/python.svg" />
-          <Tecnologies name="SQL" url="/svg/tecnologies/sql.svg" />
+  <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr]">
+    <div class="space-y-4">
+      {experiences.map((exp) => (
+        <WorkCard {...exp} />
+      ))}
+    </div>
+
+    <div class="glass-panel subtle-border space-y-6 p-6 sm:p-7 lg:p-8">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm uppercase tracking-[0.16em] text-teal-400 font-semibold">Herramientas</p>
+          <h4 class="text-xl font-semibold text-[var(--text-primary)]">Stack curado para velocidad</h4>
         </div>
+        <span class="pill">Calidad · Rendimiento</span>
       </div>
-      <div>
-        <h4 class="text-xl font-medium">Front-end</h4>
-        <div class="pt-2 grid grid-cols-4">
-          <Tecnologies name="Astro" url="/svg/tecnologies/astro.svg" />
-          <Tecnologies name="React" url="/svg/tecnologies/react.svg" />
-          <Tecnologies name="NextJs" url="/svg/tecnologies/next.svg" />
-          <Tecnologies name="Tailwind" url="/svg/tecnologies/tailwind.svg" />
-        </div>
+
+      <div class="space-y-6">
+        {stacks.map((stack) => (
+          <div class="space-y-3">
+            <p class="text-sm font-semibold text-[var(--text-secondary)]">{stack.title}</p>
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {stack.items.map((item) => (
+                <Tecnologies name={item.name} url={item.url} />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-      <div>
-        <h4 class="text-xl font-medium">Herramientas</h4>
-        <div class="pt-2 grid grid-cols-4">
-          <Tecnologies name="Figma" url="/svg/tecnologies/figma.svg" />
-          <Tecnologies name="Git" url="/svg/tecnologies/git.svg" />
-        </div>
-      </div>
-      <div>
-        <h4 class="text-xl font-medium">Análisis de datos</h4>
-        <div class="pt-2 grid grid-cols-4">
-          <Tecnologies name="Orange" url="/svg/tecnologies/orange.png" />
-          <Tecnologies name="Pandas" url="/svg/tecnologies/pandas.svg" />
-        </div>
-      </div>
-      <div>
-        <h4 class="text-xl font-medium">Bases de datos</h4>
-        <div class="pt-2 grid grid-cols-4">
-          <Tecnologies name="MYSQL" url="/svg/tecnologies/mysql.svg" />
-          <Tecnologies name="MongoDB" url="/svg/tecnologies/mongo.svg" />
-        </div>
+
+      <div class="space-y-2 rounded-2xl border border-dashed border-[var(--border-color)] bg-white/5 p-4">
+        <p class="text-sm font-semibold text-[var(--text-primary)]">Enfoque de trabajo</p>
+        <ul class="list-none space-y-2 text-sm text-[var(--text-secondary)]">
+          <li>· Diseño de componentes reutilizables y accesibles.</li>
+          <li>· Documentación ligera para equipos no técnicos.</li>
+          <li>· Automatizaciones que ahorran horas en tareas repetitivas.</li>
+        </ul>
       </div>
     </div>
   </div>

@@ -1,100 +1,106 @@
 ---
 import DarkModeBtn from "../buttons/DarkModeBtn.astro";
 
-const url = [
-  ["welcome", "Sobre"],
-  ["experience", "Experiencia"],
-  ["proyects", "Proyectos"],
-  //   ["reseñas", "reseñas"],
-  ["contact", "Contacto"],
+const links = [
+  { id: "welcome", label: "Inicio" },
+  { id: "experience", label: "Experiencia" },
+  { id: "proyects", label: "Proyectos" },
+  { id: "contact", label: "Contacto" },
 ];
 ---
 
-<nav
-  id="navBar"
-  class={` bg-white right-0 px-4 ease-out duration-500 flex flex-col md:flex-row justify-between fixed z-30 top-0 start-0 border-b border-gray-600 pt-4 text-stone-600 font-barlow pb-2 `}
->
-  <div class="flex
-  justify-between
-  w-[100%]
-  md:w-auto
-  items-center">
-    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="/logo.png" class="h-10 lg:h-10" alt="Logo Luis" />
-    </a>
-    <a
-      id="menu-button"
-      data-collapse-toggle="navbar-sticky"
-      data-nav-toggle="#navbar-sticky"
-      class="ease-out duration-500 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      role="button"
-      aria-controls="navbar-sticky"
-      aria-expanded="false"
+<header class="sticky top-0 z-30 backdrop-blur-xl">
+  <div class="section-shell">
+    <nav
+      class="glass-panel subtle-border mt-4 flex w-full flex-col items-start gap-3 px-4 py-3 md:px-6 lg:flex-row lg:items-center lg:justify-between"
+      id="navBar"
     >
-      <span class="sr-only">Open main menu</span>
-      <svg
-        class="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 17 14"
+      <div class="flex w-full items-center justify-between gap-3">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/logo.png" class="h-10 rounded-xl border border-[var(--border-color)]" alt="Logo Luis" />
+          <div class="leading-tight">
+            <p class="text-xs uppercase tracking-[0.12em] text-teal-400 font-semibold">Ingeniero informático</p>
+            <p class="text-base font-bold text-[var(--text-primary)]">Luis Araya</p>
+          </div>
+        </a>
+
+        <button
+          class="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border-color)] lg:hidden"
+          id="navToggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--text-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        id="navMenu"
+        class="hidden w-full flex-col gap-4 border-t border-[var(--border-color)] pt-4 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:pt-0"
       >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M1 1h15M1 7h15M1 13h15"></path>
-      </svg>
-    </a>
-  </div>
-  <div
-    id="menu-open"
-    class="ease-out duration-500 hidden items-center justify-between w-full md:flex md:w-auto md:order-1 navbar gap-5"
-    id="navbar-sticky"
-  >
-    <ul
-      class="flex flex-col gap-2 lg:p-4 md:p-0 mt-8 lg:mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 list-none"
-    >
-      {
-        url.map((nav) => (
-          <li>
-            <a
-              data-info={nav[0]}
-              class="nav-button-h duration-special ease-out hover:ease-in lg:px-0 transition cursor-pointer no-underline text-inherit "
-              href={`#${nav[1]}`}
-            >
-              {nav[1] == "Sobre" ? nav[1] + " mí" : nav[1]}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-    <ul
-      class="flex gap-4 md:gap-0 lg:p-4 md:p-0 mt-8 lg:mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 list-none"
-    >
-      <li>
-        <DarkModeBtn />
-      </li>
-    </ul>
+        <ul class="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-2">
+          {
+            links.map((nav) => (
+              <li>
+                <a class="nav-link" data-target={nav.id} href={`#${nav.id}`}>
+                  {nav.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="flex items-center gap-3">
+          <a class="btn-ghost" href="#contact">Hablemos</a>
+          <div class="rounded-xl border border-[var(--border-color)] bg-white/5 p-1">
+            <DarkModeBtn />
+          </div>
+        </div>
+      </div>
+    </nav>
   </div>
 
-  <script>
-    // Obtener referencias a los elementos del DOM
+  <script is:inline>
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+    const navLinks = Array.from(document.querySelectorAll("[data-target]"));
 
-    const button = document.querySelector("#menu-button");
-    const menuOpen = document.querySelector("#menu-open");
-    const navBtn = document.querySelectorAll(".nav-button-h");
-    const navBar = document.getElementById("navBar");
+    navToggle?.addEventListener("click", () => {
+      const isOpen = navMenu?.classList.toggle("hidden") === false;
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
 
-    // Función para manejar el click del botón del menú
-    if (button && menuOpen) {
-      button.addEventListener("click", () => {
-        // navBar?.classList.add("bg-[#111111F2]");
-        menuOpen.classList.toggle("hidden");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute("data-target") || "";
+        const target = document.getElementById(targetId);
+        if (target) {
+          const offset = 90;
+          const y = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+        if (window.innerWidth < 1024) navMenu?.classList.add("hidden");
       });
-    }
+    });
 
-    // Función para manejar el click en botones de navegación
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute("id") || "";
+          const link = document.querySelector(`[data-target="${id}"]`);
+          if (link) {
+            link.classList.toggle("active", entry.isIntersecting);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -40% 0px", threshold: 0.2 }
+    );
+
+    navLinks.forEach((link) => {
+      const section = document.getElementById(link.getAttribute("data-target") || "");
+      if (section) observer.observe(section);
+    });
   </script>
-</nav>
+</header>

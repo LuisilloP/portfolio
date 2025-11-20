@@ -4,53 +4,89 @@ import SocialMediaBtns from "../buttons/SocialMediaBtns.astro";
 
 <section
   id="welcome"
-  class="lg:w-[1200px] px-5 m-auto pt-40 flex flex-col-reverse gap-10 sm:flex-row"
+  class="section-shell grid items-center gap-12 pt-28 pb-16 lg:grid-cols-[1.1fr_.9fr] lg:pt-32 lg:pb-20"
 >
-  <div>
-    <div>
-      <h1 class="text-2xl text-stone-800 sm:text-5xl font-semibold">
-        Luis Patricio Araya
+  <div class="space-y-6">
+    <div class="flex flex-wrap items-center gap-3">
+      <span class="pill">
+        <span class="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_6px_rgba(74,222,128,0.18)]"></span>
+        Disponible para nuevos retos
+      </span>
+      <span class="pill border-dashed">Automatización · Front-end · Consultoría</span>
+    </div>
+
+    <div class="space-y-4">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-teal-400">Luis Patricio Araya</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-[var(--text-primary)]">
+        Diseño y desarrollo experiencias web enfocadas en negocio y resultados.
       </h1>
-      <p class="pt-4">
-        Soy Ingeniero Informático con experiencia en desarrollo web moderno,
-        automatización de tareas y asesoría tecnológica a PYMES. Me especializo
-        en crear soluciones eficientes usando herramientas como React, Next.js,
-        Python y n8n.
-        <br /><br />Me gusta entender cómo mejorar procesos a través del
-        software, y me entretienen los desafíos que me hacen pensar.
-        <br /><br />En mi tiempo libre sigo explorando tecnologías nuevas,
-        organizando ideas para proyectos propios, y compartiendo conocimiento.
+      <p class="text-lg text-[var(--text-secondary)]">
+        Soy Ingeniero Informático con experiencia en desarrollo web moderno, automatización de tareas y asesoría tecnológica para PYMES.
+        Trabajo con Astro, React, Next.js, n8n y Python para entregar productos claros, rápidos y fáciles de mantener.
       </p>
     </div>
-    <div class="pt-8">
-      <ul>
-        <li class="flex gap-2 items-center">
-          <img
-            class="invert-25"
-            src="/svg/location.svg"
-            alt="Logo de ubicación "
-            width={30}
-            height={30}
-          />
-          <p>IV ,Chile.</p>
-        </li>
-        <li class="flex gap-2 items-center">
-          <span class="w-[30px] text-center text-green-400">●</span>
-          <p>Disponible, en busqueda laboral.</p>
-        </li>
-      </ul>
+
+    <div class="flex flex-wrap items-center gap-3">
+      <a class="btn-primary" href="#contact">
+        Agendemos una llamada
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-4-4l4 4-4 4" />
+        </svg>
+      </a>
+      <a class="btn-ghost" href="#proyects">
+        Ver proyectos
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m7-7H5" />
+        </svg>
+      </a>
     </div>
-    <div class="pt-8">
-      <SocialMediaBtns />
+
+    <div class="flex flex-wrap gap-2 text-sm font-semibold text-[var(--text-secondary)]">
+      <span class="tech-badge">Desarrollo de sitios impactantes</span>
+      <span class="tech-badge">Automatización y eficiencia</span>
+      <span class="tech-badge">Mentoría y talleres</span>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="glass-panel subtle-border p-4">
+        <p class="text-sm text-teal-400 font-semibold">+6 proyectos productivos</p>
+        <p class="text-base font-semibold text-[var(--text-primary)]">Sitios y productos listos para clientes reales.</p>
+      </div>
+      <div class="glass-panel subtle-border p-4">
+        <p class="text-sm text-amber-400 font-semibold">Experiencia docente</p>
+        <p class="text-base font-semibold text-[var(--text-primary)]">Talleres y guías sobre estructuras de datos y web.</p>
+      </div>
+      <div class="glass-panel subtle-border p-4">
+        <p class="text-sm text-sky-400 font-semibold">Consultoría a PYMES</p>
+        <p class="text-base font-semibold text-[var(--text-primary)]">Implementación de procesos digitales y automatizaciones.</p>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-6">
+      <div class="flex items-center gap-2 text-[var(--text-secondary)]">
+        <img class="h-7 w-7 rounded-full border border-[var(--border-color)]" src="/svg/location.svg" alt="Ubicación" />
+        <p class="font-semibold">Ovalle · Región de Coquimbo, Chile</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <SocialMediaBtns />
+      </div>
     </div>
   </div>
-  <div>
-    <div class="bg-gray-500 w-auto lg:w-[400px] lg:h-[500px]">
-      <img
-        src="me.jpeg"
-        class="bottom-5 w-[90%] m-auto lg:w-[400px] lg:h-[500px] relative sm:bottom-8 sm:right-8 border-4 sm:border-8 border-white"
-        alt="Fotografia Luis Araya"
-      />
+
+  <div class="relative">
+    <div class="glass-panel subtle-border relative overflow-hidden rounded-3xl p-4 sm:p-6 lg:p-8">
+      <div class="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-transparent to-amber-400/10"></div>
+      <div class="relative">
+        <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 to-white/0 blur-3xl"></div>
+        <div class="relative overflow-hidden rounded-2xl border border-[var(--border-color)] bg-black/80">
+          <img
+            src="me.jpeg"
+            class="w-full object-cover"
+            alt="Fotografía de Luis Araya"
+            loading="lazy"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </section>
